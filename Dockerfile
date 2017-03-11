@@ -34,3 +34,8 @@ RUN wget https://github.com/vcftools/vcftools/releases/download/v0.1.14/vcftools
 RUN tar -xvf vcftools-0.1.14.tar.gz
 RUN cd vcftools-0.1.14 && ./configure && make && make test && make install
 RUN rm -r vcftools-0.1.14.tar.gz vcftools-0.1.14
+
+#install RTG tools for benchmarking
+RUN wget https://github.com/RealTimeGenomics/rtg-tools/releases/download/3.7.1/rtg-tools-3.7.1-linux-x64.zip
+RUN unzip rtg-tools-3.7.1-linux-x64.zip
+RUN mv rtg-tools-3.7.1-linux-x64/* /usr/bin
