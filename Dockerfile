@@ -26,6 +26,7 @@ RUN cd userApps && make && make test && make install
 
 #install Bioconductor and ExomeDepth
 #TODO check syntax
+#TODO specify version
 RUN R CMD 'source("https://bioconductor.org/biocLite.R") biocLite("Rsamtools") packages("ExomeDepth")'
 
 #install vcftools
