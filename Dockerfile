@@ -1,5 +1,15 @@
 FROM broadinstitute/genomes-in-the-cloud:2.2.4-1469632282
 
+#release info
+LABEL nhs.genetics.version="0.0.1"
+LABEL vendor="SSW"
+LABEL nhs.genetics.release-date=""
+LABEL nhs.genetics.version.is-production=""
+
+#install wget
+FROM ubuntu:14.04
+RUN  apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
+
 #install FASTQC
 RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip
 RUN unzip fastqc_v0.11.5.zip
